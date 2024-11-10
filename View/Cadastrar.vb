@@ -68,7 +68,7 @@
             End If
         End If
 
-        CarregarGrid()
+        GridTransacoes.DataSource = _transacaoRepository.ListarTransacoes()
     End Sub
 
     Private Sub GridTransacoes_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles GridTransacoes.CellContentClick
@@ -108,7 +108,7 @@
 
                     If exclusao Then
                         MensagemSalvo()
-                        CarregarGrid()
+                        GridTransacoes.DataSource = _transacaoRepository.ListarTransacoes()
                     Else
                         MensagemErro()
                     End If
@@ -128,7 +128,10 @@
     End Sub
 
     Private Sub BtnLimparPesquisa_Click(sender As Object, e As EventArgs) Handles BtnLimparPesquisa.Click
-        LimparPesquisa()
+        TxtPesNumCartao.Text = String.Empty
+        TxtPesValor.Text = String.Empty
+        CbFiltrarData.Checked = False
+        GridTransacoes.DataSource = _transacaoRepository.ListarTransacoes()
     End Sub
 
     Private Sub CbFiltrarData_CheckedChanged(sender As Object, e As EventArgs) Handles CbFiltrarData.CheckedChanged
@@ -160,13 +163,6 @@
         DtpData.Value = DateTime.Now
         Me.TransacaoSelecionada = Nothing
         BtnAdicionar.Text = "Adicionar"
-    End Sub
-
-    Private Sub LimparPesquisa()
-        TxtPesNumCartao.Text = String.Empty
-        TxtPesValor.Text = String.Empty
-        CbFiltrarData.Checked = False
-        CarregarGrid()
     End Sub
 
     Private Sub MensagemSalvo()

@@ -12,3 +12,17 @@ C:\Users\Julia\OneDrive\Área de Trabalho\workspace\CardManager\obj\Debug\CardMa
 C:\Users\Julia\OneDrive\Área de Trabalho\workspace\CardManager\obj\Debug\CardManager.exe
 C:\Users\Julia\OneDrive\Área de Trabalho\workspace\CardManager\obj\Debug\CardManager.xml
 C:\Users\Julia\OneDrive\Área de Trabalho\workspace\CardManager\obj\Debug\CardManager.pdb
+C:\Users\Julia\Source\Repos\CardManagerWF\bin\Debug\CardManager.exe.config
+C:\Users\Julia\Source\Repos\CardManagerWF\bin\Debug\CardManager.exe
+C:\Users\Julia\Source\Repos\CardManagerWF\bin\Debug\CardManager.pdb
+C:\Users\Julia\Source\Repos\CardManagerWF\bin\Debug\CardManager.xml
+C:\Users\Julia\Source\Repos\CardManagerWF\obj\Debug\CardManager.vbproj.AssemblyReference.cache
+C:\Users\Julia\Source\Repos\CardManagerWF\obj\Debug\CardManager.Cadastrar.resources
+C:\Users\Julia\Source\Repos\CardManagerWF\obj\Debug\CardManager.Home.resources
+C:\Users\Julia\Source\Repos\CardManagerWF\obj\Debug\CardManager.Relatorio.resources
+C:\Users\Julia\Source\Repos\CardManagerWF\obj\Debug\CardManager.Resources.resources
+C:\Users\Julia\Source\Repos\CardManagerWF\obj\Debug\CardManager.vbproj.GenerateResource.cache
+C:\Users\Julia\Source\Repos\CardManagerWF\obj\Debug\CardManager.vbproj.CoreCompileInputs.cache
+C:\Users\Julia\Source\Repos\CardManagerWF\obj\Debug\CardManager.exe
+C:\Users\Julia\Source\Repos\CardManagerWF\obj\Debug\CardManager.xml
+C:\Users\Julia\Source\Repos\CardManagerWF\obj\Debug\CardManager.pdb
