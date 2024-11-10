@@ -24,20 +24,20 @@ Partial Class Relatorio
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.DgvTransacoes = New System.Windows.Forms.DataGridView()
+        Me.LblTitulo = New System.Windows.Forms.Label()
+        Me.BtnExcel = New System.Windows.Forms.Button()
+        Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
+        Me.TsbVoltar = New System.Windows.Forms.ToolStripButton()
+        Me.LblMensagem = New System.Windows.Forms.Label()
         Me.NumeroCartaoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ValorTransacaoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataTransacaoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DescricaoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CategoriaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.RelatorioModelBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.LblTitulo = New System.Windows.Forms.Label()
-        Me.BtnExcel = New System.Windows.Forms.Button()
-        Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
-        Me.TsbVoltar = New System.Windows.Forms.ToolStripButton()
-        Me.LblMensagem = New System.Windows.Forms.Label()
         CType(Me.DgvTransacoes, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RelatorioModelBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip1.SuspendLayout()
+        CType(Me.RelatorioModelBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'DgvTransacoes
@@ -62,6 +62,60 @@ Partial Class Relatorio
         Me.DgvTransacoes.RowTemplate.Height = 24
         Me.DgvTransacoes.Size = New System.Drawing.Size(1027, 369)
         Me.DgvTransacoes.TabIndex = 0
+        '
+        'LblTitulo
+        '
+        Me.LblTitulo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblTitulo.ForeColor = System.Drawing.Color.SteelBlue
+        Me.LblTitulo.Location = New System.Drawing.Point(86, 67)
+        Me.LblTitulo.Name = "LblTitulo"
+        Me.LblTitulo.Size = New System.Drawing.Size(1097, 25)
+        Me.LblTitulo.TabIndex = 1
+        Me.LblTitulo.Text = "Transações realizadas no último mês:"
+        '
+        'BtnExcel
+        '
+        Me.BtnExcel.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BtnExcel.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.BtnExcel.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnExcel.Location = New System.Drawing.Point(951, 534)
+        Me.BtnExcel.Name = "BtnExcel"
+        Me.BtnExcel.Size = New System.Drawing.Size(166, 38)
+        Me.BtnExcel.TabIndex = 2
+        Me.BtnExcel.Text = "Exportar para Excel"
+        Me.BtnExcel.UseVisualStyleBackColor = False
+        '
+        'ToolStrip1
+        '
+        Me.ToolStrip1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
+        Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TsbVoltar})
+        Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.ToolStrip1.Name = "ToolStrip1"
+        Me.ToolStrip1.Size = New System.Drawing.Size(1183, 31)
+        Me.ToolStrip1.TabIndex = 4
+        Me.ToolStrip1.Text = "ToolStrip1"
+        '
+        'TsbVoltar
+        '
+        Me.TsbVoltar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.TsbVoltar.Image = Global.CardManager.My.Resources.Resources.icons8_esquerda_50
+        Me.TsbVoltar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.TsbVoltar.Name = "TsbVoltar"
+        Me.TsbVoltar.Size = New System.Drawing.Size(29, 28)
+        Me.TsbVoltar.Text = "Voltar"
+        '
+        'LblMensagem
+        '
+        Me.LblMensagem.BackColor = System.Drawing.Color.LightCoral
+        Me.LblMensagem.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.LblMensagem.ForeColor = System.Drawing.Color.Brown
+        Me.LblMensagem.Location = New System.Drawing.Point(0, 645)
+        Me.LblMensagem.Name = "LblMensagem"
+        Me.LblMensagem.Size = New System.Drawing.Size(1183, 42)
+        Me.LblMensagem.TabIndex = 5
+        Me.LblMensagem.Text = "Ocorreu um erro durante a operação"
+        Me.LblMensagem.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'NumeroCartaoDataGridViewTextBoxColumn
         '
@@ -107,60 +161,6 @@ Partial Class Relatorio
         '
         Me.RelatorioModelBindingSource.DataSource = GetType(CardManager.RelatorioModel)
         '
-        'LblTitulo
-        '
-        Me.LblTitulo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblTitulo.ForeColor = System.Drawing.Color.SteelBlue
-        Me.LblTitulo.Location = New System.Drawing.Point(86, 67)
-        Me.LblTitulo.Name = "LblTitulo"
-        Me.LblTitulo.Size = New System.Drawing.Size(1097, 25)
-        Me.LblTitulo.TabIndex = 1
-        Me.LblTitulo.Text = "Transações realizadas no último mês:"
-        '
-        'BtnExcel
-        '
-        Me.BtnExcel.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.BtnExcel.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.BtnExcel.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnExcel.Location = New System.Drawing.Point(951, 534)
-        Me.BtnExcel.Name = "BtnExcel"
-        Me.BtnExcel.Size = New System.Drawing.Size(166, 38)
-        Me.BtnExcel.TabIndex = 2
-        Me.BtnExcel.Text = "Exportar para Excel"
-        Me.BtnExcel.UseVisualStyleBackColor = False
-        '
-        'ToolStrip1
-        '
-        Me.ToolStrip1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
-        Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TsbVoltar})
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
-        Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(1183, 27)
-        Me.ToolStrip1.TabIndex = 4
-        Me.ToolStrip1.Text = "ToolStrip1"
-        '
-        'TsbVoltar
-        '
-        Me.TsbVoltar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.TsbVoltar.Image = Global.CardManager.My.Resources.Resources.icons8_esquerda_50
-        Me.TsbVoltar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.TsbVoltar.Name = "TsbVoltar"
-        Me.TsbVoltar.Size = New System.Drawing.Size(29, 24)
-        Me.TsbVoltar.Text = "Voltar"
-        '
-        'LblMensagem
-        '
-        Me.LblMensagem.BackColor = System.Drawing.Color.LightCoral
-        Me.LblMensagem.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.LblMensagem.ForeColor = System.Drawing.Color.Brown
-        Me.LblMensagem.Location = New System.Drawing.Point(0, 645)
-        Me.LblMensagem.Name = "LblMensagem"
-        Me.LblMensagem.Size = New System.Drawing.Size(1183, 42)
-        Me.LblMensagem.TabIndex = 5
-        Me.LblMensagem.Text = "Ocorreu um erro durante a operação"
-        Me.LblMensagem.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
         'Relatorio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -176,9 +176,9 @@ Partial Class Relatorio
         Me.Text = "Card Manager"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.DgvTransacoes, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RelatorioModelBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
+        CType(Me.RelatorioModelBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

@@ -34,6 +34,8 @@ Partial Class Cadastrar
         Me.TxtNumCartao = New System.Windows.Forms.MaskedTextBox()
         Me.BtnAdicionar = New System.Windows.Forms.Button()
         Me.GridTransacoes = New System.Windows.Forms.DataGridView()
+        Me.Editar = New System.Windows.Forms.DataGridViewLinkColumn()
+        Me.Excluir = New System.Windows.Forms.DataGridViewLinkColumn()
         Me.TxtPesValor = New System.Windows.Forms.TextBox()
         Me.TxtPesNumCartao = New System.Windows.Forms.MaskedTextBox()
         Me.DtpPesData = New System.Windows.Forms.DateTimePicker()
@@ -46,14 +48,12 @@ Partial Class Cadastrar
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.BtnPesquisar = New System.Windows.Forms.Button()
         Me.LblMensagem = New System.Windows.Forms.Label()
-        Me.TransacaoModelBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.IdTransacaoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NumeroCartaoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ValorTransacaoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataTransacaoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DescricaoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Editar = New System.Windows.Forms.DataGridViewLinkColumn()
-        Me.Excluir = New System.Windows.Forms.DataGridViewLinkColumn()
+        Me.TransacaoModelBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         CType(Me.GridTransacoes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip1.SuspendLayout()
         CType(Me.TransacaoModelBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -170,6 +170,26 @@ Partial Class Cadastrar
         Me.GridTransacoes.RowTemplate.Height = 24
         Me.GridTransacoes.Size = New System.Drawing.Size(1053, 457)
         Me.GridTransacoes.TabIndex = 13
+        '
+        'Editar
+        '
+        Me.Editar.HeaderText = "Editar"
+        Me.Editar.LinkColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.Editar.MinimumWidth = 6
+        Me.Editar.Name = "Editar"
+        Me.Editar.ReadOnly = True
+        Me.Editar.Text = "Editar"
+        Me.Editar.UseColumnTextForLinkValue = True
+        '
+        'Excluir
+        '
+        Me.Excluir.HeaderText = "Excluir"
+        Me.Excluir.LinkColor = System.Drawing.Color.Red
+        Me.Excluir.MinimumWidth = 6
+        Me.Excluir.Name = "Excluir"
+        Me.Excluir.ReadOnly = True
+        Me.Excluir.Text = "Excluir"
+        Me.Excluir.UseColumnTextForLinkValue = True
         '
         'TxtPesValor
         '
@@ -288,10 +308,6 @@ Partial Class Cadastrar
         Me.LblMensagem.Text = "Ocorreu um erro durante a operação"
         Me.LblMensagem.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'TransacaoModelBindingSource
-        '
-        Me.TransacaoModelBindingSource.DataSource = GetType(CardManager.TransacaoModel)
-        '
         'IdTransacaoDataGridViewTextBoxColumn
         '
         Me.IdTransacaoDataGridViewTextBoxColumn.DataPropertyName = "Id_Transacao"
@@ -327,25 +343,9 @@ Partial Class Cadastrar
         Me.DescricaoDataGridViewTextBoxColumn.MinimumWidth = 6
         Me.DescricaoDataGridViewTextBoxColumn.Name = "DescricaoDataGridViewTextBoxColumn"
         '
-        'Editar
+        'TransacaoModelBindingSource
         '
-        Me.Editar.HeaderText = "Editar"
-        Me.Editar.LinkColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.Editar.MinimumWidth = 6
-        Me.Editar.Name = "Editar"
-        Me.Editar.ReadOnly = True
-        Me.Editar.Text = "Editar"
-        Me.Editar.UseColumnTextForLinkValue = True
-        '
-        'Excluir
-        '
-        Me.Excluir.HeaderText = "Excluir"
-        Me.Excluir.LinkColor = System.Drawing.Color.Red
-        Me.Excluir.MinimumWidth = 6
-        Me.Excluir.Name = "Excluir"
-        Me.Excluir.ReadOnly = True
-        Me.Excluir.Text = "Excluir"
-        Me.Excluir.UseColumnTextForLinkValue = True
+        Me.TransacaoModelBindingSource.DataSource = GetType(CardManager.TransacaoModel)
         '
         'Cadastrar
         '

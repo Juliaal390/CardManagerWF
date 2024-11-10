@@ -16,10 +16,10 @@ Public Class RelatorioRepository
             Dim query As String = "SELECT Numero_Cartao, Valor_Transacao, Data_Transacao, " &
                 "Descricao, dbo.fu_CategorizarTransacao(Valor_Transacao) AS Categoria " &
                 "FROM Transacoes WHERE Data_Transacao BETWEEN @DataInicial AND @DataFinal " &
-                "ORDER BY Data_Transacao DESC"
+                "ORDER BY Id_Transacao DESC"
 
-            Dim dataInicial As New SqlParameter("@DataInicial", DbType.Date) With {.Value = inicioMes}
-            Dim dataFinal As New SqlParameter("@DataFinal", DbType.Date) With {.Value = fimMes}
+            Dim dataInicial As New SqlParameter("@DataInicial", SqlDbType.Date) With {.Value = inicioMes}
+            Dim dataFinal As New SqlParameter("@DataFinal", SqlDbType.Date) With {.Value = fimMes}
 
             Dim sqlCommand As New SqlCommand(query, Conn)
             sqlCommand.Parameters.Add(dataInicial)
