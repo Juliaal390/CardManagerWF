@@ -1,8 +1,10 @@
-﻿Imports System.Data.SqlClient
+﻿Imports System.Configuration
+Imports System.Data.SqlClient
 
 Public Class RelatorioRepository
     Implements IRelatorioRepository
-    Private Property Conn As New SqlConnection("INSERIR STRING DE CONEXÃO")
+
+    Private ReadOnly Property Conn As New SqlConnection(ConfigurationManager.ConnectionStrings("ConnString").ConnectionString)
     Public Function ListarTransacoesMensais() As List(Of RelatorioModel) Implements IRelatorioRepository.ListarTransacoesMensais
         Dim transacoesLista As New List(Of RelatorioModel)
         Try

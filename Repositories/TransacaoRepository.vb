@@ -1,9 +1,11 @@
-﻿Imports System.Data.SqlClient
+﻿Imports System.Configuration
+Imports System.Data.SqlClient
 Imports System.Text
 Imports System.Windows.Forms.AxHost
 Public Class TransacaoRepository
     Implements ITransacaoRepository
-    Private Property Conn As New SqlConnection("INSERIR STRING DE CONEXÃO")
+
+    Private ReadOnly Property Conn As New SqlConnection(ConfigurationManager.ConnectionStrings("ConnString").ConnectionString)
 
     Public Function Adicionar(transacao As TransacaoModel) As Boolean Implements ITransacaoRepository.Adicionar
         Try

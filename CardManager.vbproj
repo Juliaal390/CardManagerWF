@@ -49,6 +49,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
@@ -73,23 +74,23 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cadastrar.vb">
+    <Compile Include="View\Cadastrar.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Cadastrar.Designer.vb">
+    <Compile Include="View\Cadastrar.Designer.vb">
       <DependentUpon>Cadastrar.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Home.Designer.vb">
+    <Compile Include="View\Home.Designer.vb">
       <DependentUpon>Home.vb</DependentUpon>
     </Compile>
-    <Compile Include="Home.vb">
+    <Compile Include="View\Home.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Relatorio.Designer.vb">
+    <Compile Include="View\Relatorio.Designer.vb">
       <DependentUpon>Relatorio.vb</DependentUpon>
     </Compile>
-    <Compile Include="Relatorio.vb">
+    <Compile Include="View\Relatorio.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Models\RelatorioModel.vb" />
@@ -116,13 +117,13 @@
     <Compile Include="Repositories\TransacaoRepository.vb" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Cadastrar.resx">
+    <EmbeddedResource Include="View\Cadastrar.resx">
       <DependentUpon>Cadastrar.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Home.resx">
+    <EmbeddedResource Include="View\Home.resx">
       <DependentUpon>Home.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Relatorio.resx">
+    <EmbeddedResource Include="View\Relatorio.resx">
       <DependentUpon>Relatorio.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">

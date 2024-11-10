@@ -11,13 +11,14 @@
 #Region "Comportamentos"
     Private Sub Cadastrar_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LblMensagem.Visible = False
+        DtpPesData.Enabled = False
+        DtpPesData.Visible = False
+
         Dim lista As List(Of TransacaoModel)
         lista = _transacaoRepository.ListarTransacoes()
         GridTransacoes.DataSource = lista
 
         LimparCampos()
-        DtpPesData.Enabled = False
-        DtpPesData.Visible = False
     End Sub
 
     Private Sub BtnAdicionar_Click(sender As Object, e As EventArgs) Handles BtnAdicionar.Click
@@ -42,7 +43,6 @@
                 MensagemErro()
                 Return
             End Try
-
 
             Dim cadastro As Boolean = _transacaoRepository.Adicionar(transacao)
 

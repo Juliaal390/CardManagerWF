@@ -34,8 +34,6 @@ Partial Class Cadastrar
         Me.TxtNumCartao = New System.Windows.Forms.MaskedTextBox()
         Me.BtnAdicionar = New System.Windows.Forms.Button()
         Me.GridTransacoes = New System.Windows.Forms.DataGridView()
-        Me.Editar = New System.Windows.Forms.DataGridViewLinkColumn()
-        Me.Excluir = New System.Windows.Forms.DataGridViewLinkColumn()
         Me.TxtPesValor = New System.Windows.Forms.TextBox()
         Me.TxtPesNumCartao = New System.Windows.Forms.MaskedTextBox()
         Me.DtpPesData = New System.Windows.Forms.DateTimePicker()
@@ -48,12 +46,14 @@ Partial Class Cadastrar
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.BtnPesquisar = New System.Windows.Forms.Button()
         Me.LblMensagem = New System.Windows.Forms.Label()
+        Me.TransacaoModelBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.IdTransacaoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NumeroCartaoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ValorTransacaoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataTransacaoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DescricaoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TransacaoModelBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Editar = New System.Windows.Forms.DataGridViewLinkColumn()
+        Me.Excluir = New System.Windows.Forms.DataGridViewLinkColumn()
         CType(Me.GridTransacoes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip1.SuspendLayout()
         CType(Me.TransacaoModelBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -171,24 +171,6 @@ Partial Class Cadastrar
         Me.GridTransacoes.Size = New System.Drawing.Size(1053, 457)
         Me.GridTransacoes.TabIndex = 13
         '
-        'Editar
-        '
-        Me.Editar.HeaderText = "Editar"
-        Me.Editar.MinimumWidth = 6
-        Me.Editar.Name = "Editar"
-        Me.Editar.ReadOnly = True
-        Me.Editar.Text = "Editar"
-        Me.Editar.UseColumnTextForLinkValue = True
-        '
-        'Excluir
-        '
-        Me.Excluir.HeaderText = "Excluir"
-        Me.Excluir.MinimumWidth = 6
-        Me.Excluir.Name = "Excluir"
-        Me.Excluir.ReadOnly = True
-        Me.Excluir.Text = "Excluir"
-        Me.Excluir.UseColumnTextForLinkValue = True
-        '
         'TxtPesValor
         '
         Me.TxtPesValor.Location = New System.Drawing.Point(227, 363)
@@ -243,6 +225,7 @@ Partial Class Cadastrar
         'CbFiltrarData
         '
         Me.CbFiltrarData.AutoSize = True
+        Me.CbFiltrarData.Cursor = System.Windows.Forms.Cursors.Hand
         Me.CbFiltrarData.Location = New System.Drawing.Point(402, 336)
         Me.CbFiltrarData.Name = "CbFiltrarData"
         Me.CbFiltrarData.Size = New System.Drawing.Size(115, 20)
@@ -264,6 +247,7 @@ Partial Class Cadastrar
         'TsbVoltar
         '
         Me.TsbVoltar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.TsbVoltar.ForeColor = System.Drawing.SystemColors.ControlText
         Me.TsbVoltar.Image = Global.CardManager.My.Resources.Resources.icons8_esquerda_50
         Me.TsbVoltar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.TsbVoltar.Name = "TsbVoltar"
@@ -284,6 +268,7 @@ Partial Class Cadastrar
         '
         'BtnPesquisar
         '
+        Me.BtnPesquisar.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BtnPesquisar.Location = New System.Drawing.Point(677, 361)
         Me.BtnPesquisar.Name = "BtnPesquisar"
         Me.BtnPesquisar.Size = New System.Drawing.Size(121, 24)
@@ -302,6 +287,10 @@ Partial Class Cadastrar
         Me.LblMensagem.TabIndex = 26
         Me.LblMensagem.Text = "Ocorreu um erro durante a operação"
         Me.LblMensagem.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'TransacaoModelBindingSource
+        '
+        Me.TransacaoModelBindingSource.DataSource = GetType(CardManager.TransacaoModel)
         '
         'IdTransacaoDataGridViewTextBoxColumn
         '
@@ -338,9 +327,25 @@ Partial Class Cadastrar
         Me.DescricaoDataGridViewTextBoxColumn.MinimumWidth = 6
         Me.DescricaoDataGridViewTextBoxColumn.Name = "DescricaoDataGridViewTextBoxColumn"
         '
-        'TransacaoModelBindingSource
+        'Editar
         '
-        Me.TransacaoModelBindingSource.DataSource = GetType(CardManager.TransacaoModel)
+        Me.Editar.HeaderText = "Editar"
+        Me.Editar.LinkColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.Editar.MinimumWidth = 6
+        Me.Editar.Name = "Editar"
+        Me.Editar.ReadOnly = True
+        Me.Editar.Text = "Editar"
+        Me.Editar.UseColumnTextForLinkValue = True
+        '
+        'Excluir
+        '
+        Me.Excluir.HeaderText = "Excluir"
+        Me.Excluir.LinkColor = System.Drawing.Color.Red
+        Me.Excluir.MinimumWidth = 6
+        Me.Excluir.Name = "Excluir"
+        Me.Excluir.ReadOnly = True
+        Me.Excluir.Text = "Excluir"
+        Me.Excluir.UseColumnTextForLinkValue = True
         '
         'Cadastrar
         '
@@ -396,13 +401,6 @@ Partial Class Cadastrar
     Friend WithEvents BtnAdicionar As Button
     Friend WithEvents GridTransacoes As DataGridView
     Friend WithEvents TransacaoModelBindingSource As BindingSource
-    Friend WithEvents IdTransacaoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents NumeroCartaoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents ValorTransacaoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents DataTransacaoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents DescricaoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents Editar As DataGridViewLinkColumn
-    Friend WithEvents Excluir As DataGridViewLinkColumn
     Friend WithEvents TxtPesValor As TextBox
     Friend WithEvents TxtPesNumCartao As MaskedTextBox
     Friend WithEvents DtpPesData As DateTimePicker
@@ -415,4 +413,11 @@ Partial Class Cadastrar
     Friend WithEvents BtnPesquisar As Button
     Friend WithEvents TsbVoltar As ToolStripButton
     Friend WithEvents LblMensagem As Label
+    Friend WithEvents IdTransacaoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents NumeroCartaoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ValorTransacaoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents DataTransacaoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents DescricaoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents Editar As DataGridViewLinkColumn
+    Friend WithEvents Excluir As DataGridViewLinkColumn
 End Class
